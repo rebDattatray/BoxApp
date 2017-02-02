@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\Dattatray\Studio Work Space\Box App Resource\BoxApp\effects\src\main\assets"/><source path="C:\Dattatray\Studio Work Space\Box App Resource\BoxApp\effects\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="C:\Dattatray\Studio Work Space\Box App Resource\BoxApp\effects\src\debug\assets"/></dataSet></merger>

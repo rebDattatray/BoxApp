@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+
+    <declare-styleable name="TypefacedTextView">
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MyTextView">
+        <attr name="fontName" format="string" />
+    </declare-styleable>
+
+    <attr name="direction">
+
+        <enum name="rightToLeft" value="0" />
+
+        <enum name="bottomToTop" value="1" />
+
+        <enum name="leftToRight" value="2" />
+
+        <enum name="topToBottom" value="3" />
+
+    </attr>
+
+
+    <declare-styleable name="MultiDirectionSlidingDrawer">
+
+        <attr name="handle" format="reference" />
+
+        <attr name="content" format="reference" />
+
+        <attr name="direction" />
+
+        <attr name="bottomOffset" format="dimension" />
+
+        <attr name="topOffset" format="dimension" />
+
+        <attr name="allowSingleTap" format="boolean" />
+
+        <attr name="animateOnClick" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="PatternView">
+        <!-- Defines the aspect to use when drawing PatternView. -->
+        <attr name="pl_aspect">
+            <!-- Square; the default value. -->
+            <enum name="square" value="0" />
+            <enum name="lock_width" value="1" />
+            <enum name="lock_height" value="2" />
+        </attr>
+        <!-- Defines the regular pattern color. -->
+        <attr name="pl_regularColor" format="color|reference" />
+        <!-- Defines the error color. -->
+        <attr name="pl_errorColor" format="color|reference" />
+        <!-- Defines the success color. -->
+        <attr name="pl_successColor" format="color|reference"/>
+    </declare-styleable>
+
+</resources>

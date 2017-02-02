@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "466305570049",
+    "project_id": "giftbox-156707"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466305570049:android:61a5d83d0e6cb9cf",
+        "android_client_info": {
+          "package_name": "com.giftbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466305570049-2nhltkre9bc1fvh3qbdmrre1811ouiqt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.giftbox",
+            "certificate_hash": "D4B844F81D20677E37759DB62B92EBAC014010C6"
+          }
+        },
+        {
+          "client_id": "466305570049-l9p5j0r67ttai7bbg64p508qhrkti9n2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWQ9DaXDqgnnnHnxwnIxuDATe6GhyOB2k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

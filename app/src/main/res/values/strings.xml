@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BoxDemoApp</string>
+    <string name="facebook_app_id">373753482993928</string>
+
+    <string name="fb_login_protocol_scheme">fb373753482993928</string>
+    <string name="gp_server_client_id">466305570049-o7ksd6djofrc0pf6k2iktf7hf0qtpc8o.apps.googleusercontent.com</string>
+
+    <string name="button_text_start">Start</string>
+    <string name="button_text_stop">Stop</string>
+    <string name="image_button_play">Start playing button.</string>
+
+    <!-- for frameSize_spinner -->
+    <string-array name="frame_size_values">
+        <item>640 x 480</item>
+        <item>1024 x 768</item>
+        <item>1280 x 720</item>
+    </string-array>
+    <!-- for videoBitRate_spinner -->
+    <string-array name="video_bit_rate_values">
+        <item>5000</item>
+        <item>4000</item>
+        <item>3000</item>
+        <item>2000</item>
+        <item>1000</item>
+    </string-array>
+</resources>
