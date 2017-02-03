@@ -21,23 +21,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 
 import com.rebelute.boxdemoapp.R;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-import controls.ActivityWithTimeline;
 import controls.TimelineItem;
+import controls.ActivityWithTimeline;
 
-public class ComposerVideoEffectActivity extends ActivityWithTimeline implements View.OnClickListener {
+public class ComposerVideoWaterMarkActivity extends ActivityWithTimeline implements View.OnClickListener {
     TimelineItem mItem;
 
-    Spinner mEffects;
 
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -45,10 +39,9 @@ public class ComposerVideoEffectActivity extends ActivityWithTimeline implements
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.composer_transcode_effect_activity);
+        setContentView(R.layout.composer_transcode_activity);
 
         ((Button)findViewById(R.id.action)).setText("Apply Video Effect");
-        ((Spinner)findViewById(R.id.effect)).setVisibility(View.VISIBLE);
 
         init();
     }
@@ -69,24 +62,10 @@ public class ComposerVideoEffectActivity extends ActivityWithTimeline implements
 
         ((Button) findViewById(R.id.action)).setOnClickListener(this);
 
-        mEffects = (Spinner) findViewById(R.id.effect);
 
-        fillEffectsList();
     }
 
-    private void fillEffectsList() {
-        List<String> list = new ArrayList<String>();
 
-        list.add("Sepia");
-        list.add("Grayscale");
-        list.add("Inverse");
-        //list.add("Text Overlay");
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        mEffects.setAdapter(dataAdapter);
-    }
 
     public void action() {
         String mediaFileName = mItem.getMediaFileName();
@@ -100,13 +79,13 @@ public class ComposerVideoEffectActivity extends ActivityWithTimeline implements
         mItem.stopVideoView();
 
         Intent intent = new Intent();
-        intent.setClass(this, ComposerVideoEffectCoreActivity.class);
+        intent.setClass(this, ComposerVideoWaterMarkCoreActivity.class);
 
         Bundle b = new Bundle();
         b.putString("srcMediaName1", mItem.getMediaFileName());
         intent.putExtras(b);
-        b.putString("dstMediaPath", mItem.genDstPath(mItem.getMediaFileName(), getRandomNumber(1,99)+ mItem.getVideoEffectName(mEffects.getSelectedItemPosition())));
-        b.putInt("effectIndex", mEffects.getSelectedItemPosition());
+        b.putString("dstMediaPath", mItem.genDstPath(mItem.getMediaFileName(), getRandomNumber(1,99)+"Text Overlay"));
+        b.putInt("effectIndex", 3);
         intent.putExtras(b);
         b.putString("srcUri1", mItem.getUri().getString());
         intent.putExtras(b);

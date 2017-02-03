@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <permission
+        android:name="android.permission.INTERACT_ACROSS_USERS_FULL"
+        android:protectionLevel="signature" />
     <!-- Camera permissions-->
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -58,6 +61,8 @@
 
         <activity android:name=".ShareOnSocialMedia" />
 
+        <activity android:name=".Activity_Selection" />
+
         <!--Video Join-->
         <activity
             android:name="mergevideo.ComposerJoinActivity"
@@ -75,6 +80,17 @@
 
         <!--WatterMark-->
         <activity
+            android:name="watermarkk.ComposerVideoWaterMarkActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Join Video Core" />
+        <activity
+            android:name="watermarkk.ComposerVideoWaterMarkCoreActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Join Video Core" />
+
+        <!--WatterMark-->
+        <!--Video Effect-->
+        <activity
             android:name="watermarkk.ComposerVideoEffectActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Join Video Core" />
@@ -83,8 +99,23 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Join Video Core" />
 
-        <!--WatterMark-->
+        <!--Video Effect-->
+        <!--Video Gallery , Video Trimming-->
+        <activity android:name="libTrim.RecordAndSave" />
+        <activity android:name="libTrim.TrimmerActivity" />
+        <activity
+            android:name="trimvideo.VideoViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="trimvideo.VideoGallery"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Join Video Core" />
 
+        <activity
+            android:name="trimvideo.MainActivity_Trim"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Join Video Core" />
+        <!--Video Gallery , Video Trimming-->
 
         <!--Facebook login-->
         <activity

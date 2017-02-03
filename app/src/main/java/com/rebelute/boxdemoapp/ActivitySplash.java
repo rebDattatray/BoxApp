@@ -1,8 +1,6 @@
 package com.rebelute.boxdemoapp;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +10,7 @@ import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import io.fabric.sdk.android.Fabric;
 import mergevideo.ComposerJoinActivity;
+import trimvideo.VideoGallery;
 import watermarkk.ComposerVideoEffectActivity;
 
 /**
@@ -39,7 +38,7 @@ public class ActivitySplash extends AppCompatActivity {
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
 
-                Intent mainIntent = new Intent(ActivitySplash.this, ComposerJoinActivity.class);//Activity_Login.class;ComposerVideoEffectActivity;ComposerJoinActivity
+                Intent mainIntent = new Intent(ActivitySplash.this, Activity_Selection.class);
                 startActivity(mainIntent);
                 overridePendingTransition(R.anim.slide_in_drawer, R.anim.slide_no);
                 finish();

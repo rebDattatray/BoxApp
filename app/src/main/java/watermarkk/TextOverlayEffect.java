@@ -67,7 +67,7 @@ public class TextOverlayEffect extends OverlayEffect {
         return 1e9 * lst.size() / sum;
     }
 
-    public TextOverlayEffect(int angle, IEglUtil eglUtil,Bitmap bitmap) {
+    public TextOverlayEffect(int angle, IEglUtil eglUtil, Bitmap bitmap) {
         super(angle, eglUtil);
 
         paint = new Paint();
@@ -76,7 +76,7 @@ public class TextOverlayEffect extends OverlayEffect {
         paint.setTextSize(defaultTextSize);                 // defaultTextSize = 40
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
-        this.bitmapb=bitmap;
+        this.bitmapb = bitmap;
     }
 
     @Override
@@ -101,8 +101,10 @@ public class TextOverlayEffect extends OverlayEffect {
         paint.setAntiAlias(true);
         paint.setFilterBitmap(true);
         paint.setDither(true);
+        if (bitmapb!=null) {
+            canvas.drawBitmap(scaleDown(bitmapb, 50, true), width - 350 * scalePosition, 60 * scalePosition, paint);
+        }
 
-        canvas.drawBitmap(scaleDown(bitmapb,50,true), width - 350 * scalePosition, 60 * scalePosition, paint);
     }
 
     public static Bitmap scaleDown(Bitmap realImage, float maxImageSize,

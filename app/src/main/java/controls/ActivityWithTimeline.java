@@ -27,6 +27,8 @@ import android.view.Gravity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 
 public class ActivityWithTimeline extends Activity implements TimelineItem.TimelineItemEvents {
     protected static final int IMPORT_FROM_GALLERY_REQUEST = 1;
@@ -120,5 +122,15 @@ public class ActivityWithTimeline extends Activity implements TimelineItem.Timel
         AlertDialog d = b.show();
 
         ((TextView) d.findViewById(android.R.id.message)).setGravity(Gravity.CENTER);
+    }
+
+    public int getRandomNumber(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 }

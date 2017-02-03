@@ -1,1 +1,1 @@
-include ':app', ':domain', ':android', ':effects'
+include ':app', ':domain', ':android', ':effects', ':k4l-video-trimmer', ':videokit'

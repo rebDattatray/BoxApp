@@ -16,7 +16,12 @@
 
 package watermarkk;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+
+import com.rebelute.boxdemoapp.R;
 
 import org.m4m.IVideoEffect;
 import org.m4m.MediaComposer;
@@ -31,7 +36,7 @@ import java.io.IOException;
 import mergevideo.ComposerTranscodeCoreActivity;
 
 
-public class ComposerVideoEffectCoreActivity extends ComposerTranscodeCoreActivity {
+public class ComposerVideoWaterMarkCoreActivity extends ComposerTranscodeCoreActivity {
 
     private int effectIndex;
 
@@ -43,7 +48,7 @@ public class ComposerVideoEffectCoreActivity extends ComposerTranscodeCoreActivi
         dstMediaPath = b.getString("dstMediaPath");
         mediaUri1 = new Uri(b.getString("srcUri1"));
 
-        effectIndex = b.getInt("effectIndex");
+        effectIndex = 3;//b.getInt("effectIndex");
     }
 
     @Override
@@ -71,7 +76,9 @@ public class ComposerVideoEffectCoreActivity extends ComposerTranscodeCoreActivi
                 effect = new InverseEffect(0, factory.getEglUtil());
                 break;
             case 3:
-                effect = new TextOverlayEffect(0, factory.getEglUtil(),null);
+                Resources res = getResources();
+                Bitmap bitmap = BitmapFactory.decodeResource(res, R.mipmap.ic_launcher);
+                effect = new TextOverlayEffect(0, factory.getEglUtil(),bitmap);
                 break;
             default:
                 break;
@@ -79,6 +86,7 @@ public class ComposerVideoEffectCoreActivity extends ComposerTranscodeCoreActivi
 
         if (effect != null) {
             effect.setSegment(new FileSegment(0l, 0l)); // Apply to the entire stream
+
             mediaComposer.addVideoEffect(effect);
         }
     }

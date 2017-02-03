@@ -42,6 +42,7 @@ import org.m4m.android.AudioFormatAndroid;
 import org.m4m.android.VideoFormatAndroid;
 import org.m4m.domain.ISurfaceWrapper;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
@@ -485,6 +486,8 @@ public class ComposerTranscodeCoreActivity extends ActivityWithTimeline implemen
         Uri data = Uri.parse(videoUrl);
         intent.setDataAndType(data, "video/mp4");
         startActivity(intent);
+
+
     }
 
     private void updateUI(boolean inProgress) {
@@ -523,8 +526,8 @@ public class ComposerTranscodeCoreActivity extends ActivityWithTimeline implemen
     }
 
     private void printAudioInfo() {
-        audioChannelCountInfo.setText(String.valueOf(audioFormat.getAudioChannelCount()));
-        audioSampleRateInfo.setText(String.valueOf(audioFormat.getAudioSampleRateInHz()));
+//        audioChannelCountInfo.setText(String.valueOf(audioFormat.getAudioChannelCount()));
+ //       audioSampleRateInfo.setText(String.valueOf(audioFormat.getAudioSampleRateInHz()));
     }
 }
 

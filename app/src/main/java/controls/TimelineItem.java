@@ -179,8 +179,9 @@ public class TimelineItem extends RelativeLayout implements View.OnClickListener
     public String genDstPath(String srcName, String effect)
     {
         String substring = srcName.substring(0, srcName.lastIndexOf('.'));
-        File outputFolder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES).getPath(), DEFAULT_MEDIA_PACK_FOLDER);
-
+        //File outputFolder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES).getPath(), DEFAULT_MEDIA_PACK_FOLDER);
+       // File outputFolder = new File(Environment.getExternalStoragePublicDirectory("GiftBox").getPath(), DEFAULT_MEDIA_PACK_FOLDER);
+        File outputFolder = new File(Environment.getExternalStorageDirectory(), "GiftBox");
         if (!outputFolder.exists()) {
             outputFolder.mkdirs();
         }
